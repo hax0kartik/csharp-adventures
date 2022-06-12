@@ -1,7 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System;
 namespace Book_Game
 {
     public class Snake : Game
@@ -15,9 +16,8 @@ namespace Book_Game
             Continue
         }
 
-        int Length;
+        int foodpos=10;
         Direction faceDirection;
-        Vector2 currPosition;
         Vector2 foodCoord; /* food position on grid */
         LinkedList<Vector2> snakeNodes;
         Texture2D vline, hline, food, snake;
@@ -31,13 +31,9 @@ namespace Book_Game
         public Snake()
         {
             snakeNodes = new LinkedList<Vector2>();
-            snakeNodes.AddLast(CalculateVector(3, 3)); /* head */
-            snakeNodes.AddLast(CalculateVector(2, 3));
-            snakeNodes.AddLast(CalculateVector(1, 3));
+            snakeNodes.AddLast(CalculateVector(1, 3)); /* head */
             snakeNodes.AddLast(CalculateVector(0, 3)); /* tail */
             faceDirection = Direction.Right;
-            /* TODO use RAND */
-            int foodpos = 3;
             int foodposRow = foodpos / 9;
             int foodposCol = foodpos - (foodposRow * 9);
             foodCoord = CalculateVector(foodposCol, foodposRow);
@@ -48,10 +44,9 @@ namespace Book_Game
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             base.Initialize();
-            _graphics.PreferredBackBufferHeight=500;
-            _graphics.PreferredBackBufferWidth=500;
+            _graphics.PreferredBackBufferHeight = 500;
+            _graphics.PreferredBackBufferWidth = 500;
             _graphics.ApplyChanges();
 
             /* Rect Drawing Code */
@@ -83,7 +78,6 @@ namespace Book_Game
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
         }
 
         int counter = 0;
@@ -93,16 +87,16 @@ namespace Book_Game
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (Keyboard.GetState().IsKeyDown(Keys.Down) && faceDirection!=Direction.Up)
                 faceDirection = Direction.Down;
 
-            else if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Up) && faceDirection != Direction.Down)
                 faceDirection = Direction.Up;
 
-            else if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Right) && faceDirection != Direction.Left)
                 faceDirection = Direction.Right;
 
-            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Left) && faceDirection != Direction.Right)
                 faceDirection = Direction.Left;
 
             if (counter > 30)
@@ -134,11 +128,42 @@ namespace Book_Game
 
                 }
                 counter = 0;
-                if (foodCoord.X == snakeNodes.First.Value.X && foodCoord.Y == snakeNodes.First.Value.Y) {
-                    snakeNodes.AddLast(last);
-                }
-            }
 
+                if (foodCoord.X == snakeNodes.First.Value.X && foodCoord.Y == snakeNodes.First.Value.Y)
+                {
+                    snakeNodes.AddLast(last);
+                    Random rd = new Random();
+                    foodpos =(int)rd.Next(0,81);
+                    int foodposRow = foodpos / 9;
+                    int foodposCol = foodpos - (foodposRow * 9);
+                    foodCoord = CalculateVector(foodposCol, foodposRow);
+                }
+                head = snakeNodes.First.Value;
+
+                if (head.X > 500 || head.X < 0)
+                {
+                    float x = head.X > 500 ? head.X - (54.5f * 9) : head.X + (54.5f * 9);
+                    snakeNodes.RemoveFirst();
+                    snakeNodes.AddFirst(new Vector2 (x,head.Y));
+                }
+                else if (head.Y > 500 || head.Y < 0)
+                {
+                    float y = head.Y > 500 ? head.Y - (54.5f * 9) : head.Y + (54.5f * 9);
+                    snakeNodes.RemoveFirst();
+                    snakeNodes.AddFirst(new Vector2(head.X, y));
+                }
+
+                var head2 = snakeNodes.First.Next;
+                while (head2 != null)
+                {
+                    if(head2.Value.X == head.X && head2.Value.Y == head.Y)
+                    {
+                        Exit();
+                    }
+                    head2 = head2.Next;
+                }
+
+            }
             base.Update(gameTime);
         }
 
@@ -157,7 +182,7 @@ namespace Book_Game
             }
 
             /* Draw Grid */
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Vector2 coor = new Vector2(0 + (i * 54.5f), 0);
                 Vector2 coor1 = new Vector2(0, 0 + (i * 54.5f));
@@ -168,7 +193,7 @@ namespace Book_Game
             base.Draw(gameTime);
 
             /* --- */
-            
+
         }
     }
 }
