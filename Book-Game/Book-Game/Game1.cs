@@ -104,7 +104,7 @@ namespace Book_Game
             if (counter > 30)
             {
                 /* For Continue in same */
-                ref Vector2 head = snakeNodes.First.ValueRef;
+                Vector2 head = snakeNodes.First.Value;
                 Vector2 last = snakeNodes.Last.Value;
                 switch (faceDirection)
                 {
