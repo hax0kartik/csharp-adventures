@@ -23,6 +23,7 @@ namespace Book_Game
         Texture2D vline, hline, food, snake;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Vector2 coor;
 
         private Vector2 CalculateVector(int col, int row)
         {
@@ -31,6 +32,7 @@ namespace Book_Game
         public Snake()
         {
             snakeNodes = new LinkedList<Vector2>();
+            coor = new Vector2(0, 0);
             snakeNodes.AddLast(CalculateVector(1, 3)); /* head */
             snakeNodes.AddLast(CalculateVector(0, 3)); /* tail */
             faceDirection = Direction.Right;
@@ -102,27 +104,35 @@ namespace Book_Game
             if (counter > 30)
             {
                 /* For Continue in same */
-                Vector2 head = snakeNodes.First.Value;
+                ref Vector2 head = snakeNodes.First.ValueRef;
                 Vector2 last = snakeNodes.Last.Value;
                 switch (faceDirection)
                 {
                     case Direction.Right:
-                        snakeNodes.AddFirst(new Vector2(head.X + 54.5f, head.Y));
+                        coor.X = head.X + 54.5f;
+                        coor.Y = head.Y;
+                        snakeNodes.AddFirst(coor);
                         snakeNodes.RemoveLast();
                         break;
 
                     case Direction.Left:
-                        snakeNodes.AddFirst(new Vector2(head.X - 54.5f, head.Y));
+                        coor.X = head.X - 54.5f;
+                        coor.Y = head.Y;
+                        snakeNodes.AddFirst(coor);
                         snakeNodes.RemoveLast();
                         break;
 
                     case Direction.Up:
-                        snakeNodes.AddFirst(new Vector2(head.X, head.Y - 54.5f));
+                        coor.Y = head.Y - 54.5f;
+                        coor.X = head.X;
+                        snakeNodes.AddFirst(coor);
                         snakeNodes.RemoveLast();
                         break;
 
                     case Direction.Down:
-                        snakeNodes.AddFirst(new Vector2(head.X, head.Y + 54.5f));
+                        coor.X = head.X;
+                        coor.Y = head.Y + 54.5f;
+                        snakeNodes.AddFirst(coor);
                         snakeNodes.RemoveLast();
                         break;
 
@@ -184,10 +194,12 @@ namespace Book_Game
             /* Draw Grid */
             for (int i = 0; i < 10; i++)
             {
-                Vector2 coor = new Vector2(0 + (i * 54.5f), 0);
-                Vector2 coor1 = new Vector2(0, 0 + (i * 54.5f));
+                coor.X = 0 + (i * 54.5f);
+                coor.Y = 0;
                 _spriteBatch.Draw(vline, coor, Color.White);
-                _spriteBatch.Draw(hline, coor1, Color.White);
+                coor.X = 0;
+                coor.Y = 0 + (i * 54.5f);
+                _spriteBatch.Draw(hline, coor, Color.White);
             }
             _spriteBatch.End();
             base.Draw(gameTime);
