@@ -4,9 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/254-2545026_delete-button-nor-white-cross-icon-png.png</File>
-    <File>C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/download.png</File>
-    <File>C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/mixkit-medieval-show-fanfare-announcement-226.wav</File>
+    <File>C:/Users/Kartik/Desktop/c#/adventures/tictactoe/tictactoe/Content/254-2545026_delete-button-nor-white-cross-icon-png.png</File>
+    <File>C:/Users/Kartik/Desktop/c#/adventures/tictactoe/tictactoe/Content/download.png</File>
+    <File>C:/Users/Kartik/Desktop/c#/adventures/tictactoe/tictactoe/Content/mixkit-medieval-show-fanfare-announcement-226.wav</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

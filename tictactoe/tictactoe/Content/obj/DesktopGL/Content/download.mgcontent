@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/download.png</SourceFile>
-  <SourceTime>2022-06-13T13:04:17.3134954+05:30</SourceTime>
-  <DestFile>C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/bin/DesktopGL/Content/download.xnb</DestFile>
-  <DestTime>2022-06-14T09:32:22.2238454+05:30</DestTime>
+  <SourceFile>C:/Users/Kartik/Desktop/c#/adventures/tictactoe/tictactoe/Content/download.png</SourceFile>
+  <SourceTime>2022-06-14T09:48:21.8289327+05:30</SourceTime>
+  <DestFile>C:/Users/Kartik/Desktop/c#/adventures/tictactoe/tictactoe/Content/bin/DesktopGL/Content/download.xnb</DestFile>
+  <DestTime>2022-06-14T09:48:26.049008+05:30</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T21:47:54+05:30</ImporterTime>
   <Processor>TextureProcessor</Processor>
