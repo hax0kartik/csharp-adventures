@@ -120,7 +120,7 @@ namespace tictactoe
                         if (CheckWin(player))
                         {
                             Debug.WriteLine("Player " + player + " Won!");
-                            soundEffects[0].CreateInstance().Play();
+                            /*soundEffects[0].CreateInstance().Play();*/
                             Exit();
                         }
                         else if (CheckTie())
