@@ -1,1 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/254-2545026_delete-button-nor-white-cross-icon-png.png","C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/bin/DesktopGL/Content/254-2545026_delete-button-nor-white-cross-icon-png.xnb","TextureProcessor","Texture2DContent",63171,2820885,0.2666336
+"C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/download.png","C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/bin/DesktopGL/Content/download.xnb","TextureProcessor","Texture2DContent",1818,202585,0.0114649
+"C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/mixkit-medieval-show-fanfare-announcement-226.wav","C:/Users/praty/csharp-adventures/tictactoe/tictactoe/Content/bin/DesktopGL/Content/mixkit-medieval-show-fanfare-announcement-226.xnb","SoundEffectProcessor","SoundEffectContent",1469836,1469897,0.2444705

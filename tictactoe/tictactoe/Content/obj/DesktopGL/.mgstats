@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/praty/source/repos/tiktaktoe/Content/254-2545026_delete-button-nor-white-cross-icon-png.png","C:/Users/praty/source/repos/tiktaktoe/Content/bin/DesktopGL/254-2545026_delete-button-nor-white-cross-icon-png.xnb","TextureProcessor","Texture2DContent",63171,2820885,0.2019905
+"C:/Users/praty/source/repos/tiktaktoe/Content/download.png","C:/Users/praty/source/repos/tiktaktoe/Content/bin/DesktopGL/download.xnb","TextureProcessor","Texture2DContent",1818,202585,0.0103597
+"C:/Users/praty/source/repos/tiktaktoe/Content/mixkit-medieval-show-fanfare-announcement-226.wav","C:/Users/praty/source/repos/tiktaktoe/Content/bin/DesktopGL/mixkit-medieval-show-fanfare-announcement-226.xnb","SoundEffectProcessor","SoundEffectContent",1469836,1469897,0.2461876

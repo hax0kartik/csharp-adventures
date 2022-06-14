@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kartik\\Desktop\\c#\\adventures\\tictactoe\\tictactoe\\tictactoe.csproj": {}
+    "C:\\Users\\praty\\csharp-adventures\\tictactoe\\tictactoe\\tictactoe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kartik\\Desktop\\c#\\adventures\\tictactoe\\tictactoe\\tictactoe.csproj": {
+    "C:\\Users\\praty\\csharp-adventures\\tictactoe\\tictactoe\\tictactoe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartik\\Desktop\\c#\\adventures\\tictactoe\\tictactoe\\tictactoe.csproj",
+        "projectUniqueName": "C:\\Users\\praty\\csharp-adventures\\tictactoe\\tictactoe\\tictactoe.csproj",
         "projectName": "tictactoe",
-        "projectPath": "C:\\Users\\Kartik\\Desktop\\c#\\adventures\\tictactoe\\tictactoe\\tictactoe.csproj",
-        "packagesPath": "C:\\Users\\Kartik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartik\\Desktop\\c#\\adventures\\tictactoe\\tictactoe\\obj\\",
+        "projectPath": "C:\\Users\\praty\\csharp-adventures\\tictactoe\\tictactoe\\tictactoe.csproj",
+        "packagesPath": "C:\\Users\\praty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\praty\\csharp-adventures\\tictactoe\\tictactoe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kartik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\praty\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
